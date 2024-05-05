@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- ***** -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Julius+Sans+One&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="h-left">
+            <a class="logo" href="#">
+                <img src="img/logo1.png" alt="logo">
+            </a>
+        </div>
+        <div class="h-right">
+            <div class="country">
+                <a class="country-item">my</a>
+                <a class="country-item">sg</a>
+            </div>
+            <a class="oc-menu" href="#">
+                <span class="open-menu"></span>
+                <span class="close-menu"></span>
+            </a>
+        </div>
+    </header>
+    <div class="menu">
+        <div class="overlay-contact">
+            <div class="contact">
+                <p>contact</p>
+                <p class="number"><a href="+6539533327">+6539533327</a></p>
+                <p class="email"><a href="mailto:equiry@doubble.sg">equiry@doubble.sg</a></p>
+            </div>
+            <div class="address">
+                <p>Address</p>
+                <p>240B Geylang Road 389299 Singapore (3rd floor)</p>
+            </div>
+        </div>
+        <div class="overlay-menu">
+            <ul class="menu-text">
+                <li><a href="">home</a></li>
+                <li><a href="">work</a></li>
+                <li><a href="">awards</a></li>
+                <li><a href="">contact</a></li>
+            </ul>
+        </div>
+        <div class="overlay-social">
+            <a class="faceBook" href="#"><i class='bx bxl-facebook' style='color:#ffffff'></i></a>
+            <a class="instagram" href="#"><i class='bx bxl-instagram' style='color:#ffffff'></i></a>
+            <a class="twitter" href="#"><i class='bx bxl-twitter' style='color:#ffffff'></i></a>
+        </div>
+    </div>
+    <div class="first">
+        <div class="img-frame">
+            <img src="img/Banner-B_02.png" alt="">
+            <img src="img/Banner-B_01.png" alt="">
+        </div>
+    </div>
+    <div class="second offset-top">
+        <div class="home-wrapper">
+            <div class="img1-p2">
+                <img class="offset-top" src="img/img-home-02.jpg" alt="">
+            </div>
+            <hgroup class="offset-top title-holder">
+                <h1>
+                    <span>Form, Fortis & Function Are</span>
+                    <span>one</span>
+                </h1>
+                <p>With the name conveys a sense of multiplication and extra, we strive in delivering more than expected in
+                    every directions.</p>
+            </hgroup>
+            <div class="img2-p2 offset-top">
+                <img class="offset-top" src="img/img-home-01.png" alt="">
+            </div>
+        </div>
+    </div>
+    <script>
+        const logo = document.querySelector('.logo>img')
+        const ocMenu = document.querySelector('.oc-menu')
+        const menu = document.querySelector('.menu')
+        const hRight = document.querySelector('.h-right')
+        const sHRight = document.querySelectorAll('.oc-menu>span')
+        const aCountry = document.querySelectorAll('.country>a')
+        const second = document.querySelector('.second')
+        const _offSetTop = document.querySelectorAll('.offset-top')
+        const _body = document.getElementsByTagName('body')[0]
+        const first = document.querySelector('.first')
+        let op = false
+        let i =0
+        let st=new Array()
+        st[0]=0
+        ocMenu.addEventListener('click', () => {
+            if (!op) {
+                menu.style.opacity = 1
+                menu.style.visibility = "visible"
+                headerBright()
+                sHRight[1].style.opacity = 0
+                op = true
+            } else {
+                menu.style.opacity = 0
+                menu.style.visibility = "hidden"
+                headerDark()
+                sHRight[1].style.opacity = 1
+                op = false
+            }
+        })
+        _offSetTop.forEach((item, i) => {
+            item.setAttribute('data-h', item.offsetTop)
+
+        })
+
+        window.addEventListener('scroll', () => {
+            
+            st[i+1] = window.scrollY
+            console.log(st[i+1]);
+            console.log(st[i]);
+            if ((st[i] + 450) >= _offSetTop[0].getAttribute('data-h')) {
+                _body.style.backgroundColor = 'hsl(20, 29%, 6%)'
+                headerBright()
+                sHRight[1].style.border = "1px solid white"
+            } else if ((st[i] + 450) <= _offSetTop[0].getAttribute('data-h') && op == false) {
+                _body.style.backgroundColor = 'white'
+                headerDark()
+                sHRight[1].style.border = "1px solid black"
+            }
+            // ********
+
+            // let _b 
+
+            // if ((st[i] + 650) >= _offSetTop[3].getAttribute('data-h')&& st[i]<st[i+1]) {
+            //     _b = _offSetTop[4].computedStyleMap().get('top').value
+            //     _offSetTop[4].style.top = (_b - (st / 20)) + 'px'
+            //     console.log(st);
+            // } else if(st[i]>st[i+1]) {
+            //     _b= _offSetTop[4].computedStyleMap().get('top').value
+            //     _offSetTop[4].style.top = (_b + (st / 20)) + 'px'
+            // }
+            // i++
+            // if(i==2){
+            //     st[0]=st[1]
+            //     i=0
+            // }
+            
+
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        function headerBright() {
+            logo.src = `img/logo${2}.png`
+            hRight.style.color = "white"
+            sHRight[0].style.border = "1px solid white"
+            aCountry[0].style.borderBottom = "1px solid white"
+            aCountry[1].style.borderBottom = "1px solid white"
+        }
+        function headerDark() {
+            logo.src = `img/logo${1}.png`
+            hRight.style.color = "black"
+            sHRight[0].style.border = "1px solid black"
+            aCountry[0].style.borderBottom = "1px solid black"
+            aCountry[1].style.borderBottom = "1px solid black"
+        }
+    </script>
+</body>
+
+</html>

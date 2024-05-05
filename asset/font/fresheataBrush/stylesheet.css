@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Hello Freshtea Brush';
+    src: url('HelloFreshteaBrush.eot');
+    src: local('Hello Freshtea Brush'), local('HelloFreshteaBrush'),
+        url('HelloFreshteaBrush.eot?#iefix') format('embedded-opentype'),
+        url('HelloFreshteaBrush.woff2') format('woff2'),
+        url('HelloFreshteaBrush.woff') format('woff'),
+        url('HelloFreshteaBrush.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
