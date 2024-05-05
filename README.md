@@ -1,5 +1,5 @@
 # doubble-award
-![quiz-game](https://zahra-cheraghian.github.io/doubble-award/)
+- [Demo Project](https://zahra-cheraghian.github.io/doubble-award/)
 - Coded by zahracheraghian
 
 - Created - 2024
